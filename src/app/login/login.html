@@ -1,0 +1,39 @@
+<form (ngSubmit)="login()">
+  @if (loginFailed) {
+    <div class="alert alert-danger text-center p-2 mb-3" role="alert">
+      Invalid Credentials. Please Log In Again.
+    </div>
+  }
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      name="email"
+      [(ngModel)]="email"
+      required
+    />
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      name="password"
+      [(ngModel)]="password"
+      required
+    />
+  </div>
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
