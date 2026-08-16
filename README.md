@@ -22,11 +22,11 @@ To install dependencies, we follow these steps:
       
 ### 3. Generate new components
 
-For each component, we run `ng new "name of component"`. For example:
+For each component, we run `ng g c "name of component"`. For example:
 
-1. `ng new Home`
-2. `ng new Login`
-3. `ng new Profile`
+1. `ng g c Home`
+2. `ng g c Login`
+3. `ng g c Profile`
 
 ### 4. Serve the application
 
