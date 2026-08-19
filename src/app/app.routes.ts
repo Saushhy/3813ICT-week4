@@ -2,10 +2,34 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Login } from './login/login';
 import { Profile } from './profile/profile';
+import { authGuard} from './auth.guard';
 
 export const routes: Routes = [
-  { path: '', component: Home },
-  { path: 'home', component: Home, title: 'Home' },
-  { path: 'login', component: Login, title: 'Login' },
-  { path: 'profile', component: Profile, title: 'Profile' },
+
+  {
+    path: 'login',
+    component: Login,
+  },
+
+  {
+    path: 'home',
+    component: Home,
+    canActivate: [authGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'profile',
+        pathMatch: 'full',
+      },
+      {
+        path: 'profile',
+        component: Profile,
+      }
+    ],
+  },
+
+  {
+    path: '**',
+    redirectTo: 'login',
+  },
 ];

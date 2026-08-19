@@ -32,7 +32,9 @@ export class Login {
 
     if (isAuthenticated) {
       this.loginFailed = false;
-      this.router.navigate(['/profile']);
+      localStorage.setItem('userAuthenticated', "valid");
+      console.log("Valid")
+      this.router.navigate(['/home']);
     } else {
       this.loginFailed = true;
       console.log('Log in failed');
