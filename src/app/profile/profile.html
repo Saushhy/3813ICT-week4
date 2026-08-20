@@ -1,2 +1,73 @@
-<h1>ProfilePage</h1>
-<img width="400px" height="400px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzh_gCvTvAANGdmGZqrWlXpqnnaNivbOJjkD2TTafF_w&s=10">
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5">
+          <h2 class="fw-bold mb-4 text-center text-uppercase">My Profile</h2>
+
+          @if (saved) {
+            <div class="alert alert-success text-center" role="alert">
+              Profile saved successfully!
+            </div>
+          }
+
+          <form (ngSubmit)="save()">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="username"
+                placeholder="Username"
+                name="username"
+                [(ngModel)]="username"
+              />
+              <label for="username">Username</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="birthdate"
+                placeholder="Birthdate"
+                name="birthdate"
+                [(ngModel)]="birthdate"
+              />
+              <label for="birthdate">Birthdate</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                id="age"
+                placeholder="Age"
+                name="age"
+                [(ngModel)]="age"
+              />
+              <label for="age">Age</label>
+            </div>
+
+            <div class="form-floating mb-4">
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                id="email"
+                placeholder="Email"
+                name="email"
+                [(ngModel)]="email"
+              />
+              <label for="email">Email</label>
+            </div>
+
+            <div class="d-grid">
+              <button class="btn btn-outline-light btn-lg" type="submit">
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

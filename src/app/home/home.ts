@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,10 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 })
 export class Home {
   private router = inject(Router);
+  private storageService = inject(StorageService);
 
   logout() {
-    localStorage.removeItem('userAuthenticated');
+    this.storageService.removeUser();
     this.router.navigate(['/login']);
   }
 }
