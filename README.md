@@ -31,3 +31,14 @@ For each component, we run `ng new "name of component"`. For example:
 ### 4. Serve the application
 
 To serve the application, we run `ng serve`
+
+
+# Server Implementation from Week-5
+
+Server has been implemented therefore you need to run the `server.js` from server folder
+
+### Run the server
+
+On server folder run `node server.js`
+
+
